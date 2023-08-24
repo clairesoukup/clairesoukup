@@ -1,0 +1,155 @@
+a {
+  color: blue /* Set the link color to blue */
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 100vh; /* Set the container height to fill the viewport */
+  margin: 0;
+}
+
+.container::before {
+  content: ""; /* Create a pseudo-element for the background image */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/frames 1 eye 2 eye.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1; /* Set a negative z-index to position it behind the content */
+  text-decoration: none; 
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  font-family:  sans-serif; 
+  font-size: 24px; /* Increase the font size to make the text bigger */
+  text-decoration: none; 
+}
+
+.top-left {
+  position: absolute;
+  top: 50px;
+  left: 50px; /* Adjust the left distance according to your needs */
+  font-family: sans-serif;
+  font-size: 24px; /* Increase the font size to make the text bigger */
+  text-decoration: none; 
+}
+.top-right {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  font-family: sans-serif;
+  font-size: 24px; /* Increase the font size to make the text bigger */
+  text-decoration: none; 
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 50px;
+  right: 40px;
+  font-family: sans-serif; 
+  font-size: 24px; /* Increase the font size to make the text bigger */
+  text-decoration: none; 
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+  font-size: 25px;
+  text-decoration: none; 
+}
+.centered img {
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
+  text-decoration: none; 
+}
+.middle-left {
+  position: absolute;
+  bottom: 400px;
+  right: 40px;
+  font-family: sans-serif; 
+  font-size: 24px; /* Increase the font size to make the text bigger */
+  text-decoration: none; 
+}
+/* Popup container - can be anything you want */
+.popup {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  bottom: 400px;
+  left: 50px;
+  font-family: sans-serif; 
+  font-size: 24px; /* Increase the font size to make the text bigger */
+  color: blue
+  
+  
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 700px;
+  background-color: transparent
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1;
+  bottom: 50px;
+  left: 100%;
+  margin-left: -80px;
+  color: :blank
+  text-decoration: none; 
+  
+ 
+}
+/* Media Query for screens with maximum width of 600px (mobile devices) */
+@media only screen and (max-width: 600px) {
+  .popup .popuptext {
+    width: 140px; /* Adjust the value as needed for mobile screens */
+    height: 5px;
+    justify-content: space-between;
+    padding: 0px 90px; /* Adjust the padding as needed */
+    font-size: 14px; /* Adjust the font size as needed */
+    bottom: 200px
+   
+  
+  }
+}
+
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+
